@@ -38,15 +38,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserBean deleteUser(String id) {
-		
-<<<<<<< HEAD
-		userRepository.delete(id);
-		return ;
-=======
+	public UserBean deleteUser(UserBean userBean) {
 		userRepository.delete(userBean.getId());
 		return userBean;
->>>>>>> 0c97fd70c60714913cd9e0aba4e63d7eb6566365
 	}
 
 }

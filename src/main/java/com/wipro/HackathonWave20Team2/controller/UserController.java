@@ -41,9 +41,9 @@ public class UserController {
 		return ResponseEntity.ok("User Updated successfully");
 	}
 	@RequestMapping(method=RequestMethod.DELETE,value="/users/{id}")
-	public ResponseEntity<String> deleteUser(@PathVariable String id) {
+	public ResponseEntity<String> deleteUser(@RequestBody UserBean userBean,@PathVariable String id) {
 		
-		 userService.deleteUser(id);
+		 userService.deleteUser(userBean);
 		 
 		 return ResponseEntity.ok("User Deleted successfully");
 	}
