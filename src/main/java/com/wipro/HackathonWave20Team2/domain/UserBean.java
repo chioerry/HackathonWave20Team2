@@ -47,10 +47,16 @@ public class UserBean {
 		this.userName = userName;
 	}
 
+
+<<<<<<< HEAD
+=======
 	public int getAge() {
 		return age;
 	}
 
+
+
+>>>>>>> 8f0d8a2d76429cede2e83589e068027e6d62eb37
 	public void setAge(int age) {
 		this.age = age;
 	}

@@ -4,3 +4,4 @@ com/wipro/HackathonWave20Team2/service/UserServiceImpl.class
 com/wipro/HackathonWave20Team2/controller/UserController.class
 com/wipro/HackathonWave20Team2/domain/UserBean.class
 com/wipro/HackathonWave20Team2/MainClass.class
+com/wipro/HackathonWave20Team2/config/SwaggerConfig.class

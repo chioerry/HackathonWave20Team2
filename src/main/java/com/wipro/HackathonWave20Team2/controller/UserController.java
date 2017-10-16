@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.HackathonWave20Team2.domain.UserBean;
+import com.wipro.HackathonWave20Team2.exception.UserAlreadyExistException;
 import com.wipro.HackathonWave20Team2.service.UserService;
 @RestController
 @RequestMapping("/users")
@@ -39,9 +40,13 @@ public class UserController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	// This Annotation takes care to map specific response to a method with fixed value attribute
-	public ResponseEntity<String> addUser(@RequestBody UserBean userBean) {
+	public ResponseEntity<String> addUser(@RequestBody UserBean userBean) throws UserAlreadyExistException{
+		try {
+			userService.addUser(userBean);
+		}catch(UserAlreadyExistException ue){
+			throw new UserAlreadyExistException("User Already Exists");
+		}
 		
-		userService.addUser(userBean);
 		return ResponseEntity.ok("User saved successfully");
 		// ResponseEntity returns message along with HTTP Status.
 	}
