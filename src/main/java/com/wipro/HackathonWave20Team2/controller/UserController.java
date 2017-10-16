@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.HackathonWave20Team2.domain.UserBean;
+import com.wipro.HackathonWave20Team2.exception.UserAlreadyExistException;
 import com.wipro.HackathonWave20Team2.service.UserService;
 @RestController
 @RequestMapping("/users")
@@ -28,7 +29,7 @@ public class UserController {
 		// ResponseEntity returns List along with HTTP Status.
 	}
 	
-	@RequestMapping(method=RequestMethod.GET,value="/users/{id}")
+	@RequestMapping(method=RequestMethod.GET,value="{id}")
 	// This Annotation takes care to map specific response to a method with fixed value attribute
 	public ResponseEntity<String> getUser(@PathVariable String id) {
 		userService.getUserById(id);
@@ -39,14 +40,18 @@ public class UserController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	// This Annotation takes care to map specific response to a method with fixed value attribute
-	public ResponseEntity<String> addUser(@RequestBody UserBean userBean) {
+	public ResponseEntity<String> addUser(@RequestBody UserBean userBean) throws UserAlreadyExistException{
+		try {
+			userService.addUser(userBean);
+		}catch(UserAlreadyExistException ue){
+			throw new UserAlreadyExistException("User Already Exists");
+		}
 		
-		userService.addUser(userBean);
 		return ResponseEntity.ok("User saved successfully");
 		// ResponseEntity returns message along with HTTP Status.
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/users/{id}")
+	@RequestMapping(method=RequestMethod.PUT, value="{id}")
 	// This Annotation takes care to map specific response to a method with fixed value attribute
 	public ResponseEntity<String> updateUser(@RequestBody UserBean userBean) {
 		
@@ -55,7 +60,7 @@ public class UserController {
 		// ResponseEntity returns message along with HTTP Status.
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE,value="/users/{id}")
+	@RequestMapping(method=RequestMethod.DELETE,value="{id}")
 	// This Annotation takes care to map specific response to a method with fixed value attribute
 	public ResponseEntity<String> deleteUser(@RequestBody UserBean userBean,@PathVariable String id) {
 		

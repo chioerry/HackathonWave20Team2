@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wipro.HackathonWave20Team2.domain.UserBean;
+import com.wipro.HackathonWave20Team2.exception.UserAlreadyExistException;
 import com.wipro.HackathonWave20Team2.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	UserRepository userRepository;
+	UserBean userBean;
 
 	@Override
 	public List<UserBean> getAllUsers() {
@@ -26,9 +28,17 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserBean addUser(UserBean userBean) {
+	public UserBean addUser(UserBean userBean) throws UserAlreadyExistException{
 		
-		return userRepository.save(userBean);
+		if(userRepository.findOne(userBean.getId())!=null)
+		{
+			throw new UserAlreadyExistException("User already exists");
+			
+		}else {
+			
+			return userRepository.save(userBean);
+		}	
+		
 	}
 
 	@Override
