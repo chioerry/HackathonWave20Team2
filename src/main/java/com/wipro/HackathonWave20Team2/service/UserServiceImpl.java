@@ -38,10 +38,10 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserBean deleteUser(UserBean userBean) {
+	public UserBean deleteUser(String id) {
 		
-		userRepository.delete(userBean);
-		return userBean;
+		userRepository.delete(id);
+		return ;
 	}
 
 }

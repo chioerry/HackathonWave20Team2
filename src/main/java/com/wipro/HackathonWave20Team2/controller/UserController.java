@@ -19,12 +19,12 @@ public class UserController {
 	@RequestMapping("/user")
 	public ResponseEntity<List<UserBean>> getAllUsers() {
 		
-		return ResponseEntity.ok( userService.getallusers());
+		return ResponseEntity.ok( userService.getAllUsers());
 		
 	}
 	@RequestMapping("/user/{id}")
-	public ResponseEntity<String> getUser(@PathVariable int id) {
-		userService.getUser(id);
+	public ResponseEntity<String> getUser(@PathVariable String id) {
+		userService.getUserById(id);
 		return ResponseEntity.ok("User Getting Successfully");
 		
 	}
@@ -35,9 +35,9 @@ public class UserController {
 		return ResponseEntity.ok("User saved successfully");
 	}
 	@RequestMapping(method=RequestMethod.PUT, value="/users/{id}")
-	public ResponseEntity<String> updateUser(@RequestBody UserBean userBean, @PathVariable int id) {
+	public ResponseEntity<String> updateUser(@RequestBody UserBean userBean) {
 		
-		userService.updateUser(id,userBean);
+		userService.updateUser(userBean);
 		return ResponseEntity.ok("User Updated successfully");
 	}
 	@RequestMapping(method=RequestMethod.DELETE,value="/users/{id}")
