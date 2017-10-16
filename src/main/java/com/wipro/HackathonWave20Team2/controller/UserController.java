@@ -28,7 +28,7 @@ public class UserController {
 		// ResponseEntity returns List along with HTTP Status.
 	}
 	
-	@RequestMapping(method=RequestMethod.GET,value="/users/{id}")
+	@RequestMapping(method=RequestMethod.GET,value="{id}")
 	// This Annotation takes care to map specific response to a method with fixed value attribute
 	public ResponseEntity<String> getUser(@PathVariable String id) {
 		userService.getUserById(id);
@@ -46,7 +46,7 @@ public class UserController {
 		// ResponseEntity returns message along with HTTP Status.
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/users/{id}")
+	@RequestMapping(method=RequestMethod.PUT, value="{id}")
 	// This Annotation takes care to map specific response to a method with fixed value attribute
 	public ResponseEntity<String> updateUser(@RequestBody UserBean userBean) {
 		
@@ -55,11 +55,11 @@ public class UserController {
 		// ResponseEntity returns message along with HTTP Status.
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE,value="/users/{id}")
+	@RequestMapping(method=RequestMethod.DELETE,value="{id}")
 	// This Annotation takes care to map specific response to a method with fixed value attribute
-	public ResponseEntity<String> deleteUser(@RequestBody UserBean userBean,@PathVariable String id) {
+	public ResponseEntity<String> deleteUser(@PathVariable String id) {
 		
-		 userService.deleteUser(userBean);
+		 userService.deleteUser(id);
 		 
 		 return ResponseEntity.ok("User Deleted successfully");
 		// ResponseEntity returns message along with HTTP Status.

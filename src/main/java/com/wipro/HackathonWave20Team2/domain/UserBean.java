@@ -46,17 +46,11 @@ public class UserBean {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-<<<<<<< HEAD
 
 	public int getAge() {
 		return age;
 	}
 
-=======
-	public int getAge() {
-		return age;
-	}
->>>>>>> f489b5ea5c56354172f619bd03c58b9ed254fbd6
 	public void setAge(int age) {
 		this.age = age;
 	}

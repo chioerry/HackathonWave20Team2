@@ -38,9 +38,14 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserBean deleteUser(UserBean userBean) {
-		userRepository.delete(userBean.getId());
-		return userBean;
+	public String deleteUser(String id) {
+		userRepository.delete(id);
+		return "";
+	}
+	// Setter Method for mockito to access Repository
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
+		
 	}
 
 }

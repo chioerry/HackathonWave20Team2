@@ -10,5 +10,5 @@ public interface UserService {
 	public UserBean getUserById(String id);
 	public UserBean addUser(UserBean userBean);
 	public UserBean updateUser(UserBean userBean);
-	public UserBean deleteUser(UserBean userBean);
+	public String deleteUser(String id);
 }
