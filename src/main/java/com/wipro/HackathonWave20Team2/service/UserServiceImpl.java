@@ -39,10 +39,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public UserBean deleteUser(UserBean userBean) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 15b02aaad6f5c4255b59b4a419a0c92b7c53faa6
 		userRepository.delete(userBean.getId());
 		return userBean;
 	}

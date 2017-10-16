@@ -1,0 +1,6 @@
+com/wipro/HackathonWave20Team2/service/UserService.class
+com/wipro/HackathonWave20Team2/repository/UserRepository.class
+com/wipro/HackathonWave20Team2/service/UserServiceImpl.class
+com/wipro/HackathonWave20Team2/controller/UserController.class
+com/wipro/HackathonWave20Team2/domain/UserBean.class
+com/wipro/HackathonWave20Team2/MainClass.class

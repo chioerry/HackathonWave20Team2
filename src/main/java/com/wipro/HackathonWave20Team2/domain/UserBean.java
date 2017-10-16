@@ -10,7 +10,7 @@ public class UserBean {
 	@Id
 	private String id;
 	private String userName;
-	private int userAge;
+	private int age;
 	private String address;
 	private String emailId;
 	
@@ -25,7 +25,7 @@ public class UserBean {
 		super();
 		this.id = id;
 		this.userName = userName;
-		this.userAge = userAge;
+		this.age = userAge;
 		this.address = address;
 		this.emailId = emailId;
 	}
@@ -45,10 +45,10 @@ public class UserBean {
 		this.userName = userName;
 	}
 	public int getUserAge() {
-		return userAge;
+		return age;
 	}
 	public void setUserAge(int userAge) {
-		this.userAge = userAge;
+		this.age = userAge;
 	}
 	public String getAddress() {
 		return address;
