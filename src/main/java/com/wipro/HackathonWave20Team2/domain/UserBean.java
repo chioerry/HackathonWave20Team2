@@ -31,36 +31,50 @@ public class UserBean {
 	}
 	
 	// Setter and Getter methods if you want to set values individually
-	
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+<<<<<<< HEAD
+
 	public int getAge() {
 		return age;
 	}
+
+=======
+	public int getAge() {
+		return age;
+	}
+>>>>>>> f489b5ea5c56354172f619bd03c58b9ed254fbd6
 	public void setAge(int age) {
 		this.age = age;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public String getEmailId() {
 		return emailId;
 	}
+
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-
+	
 }
