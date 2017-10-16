@@ -17,13 +17,13 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/users")
+	@RequestMapping(method=RequestMethod.GET,value="/users")
 	public ResponseEntity<List<UserBean>> getAllUsers() {
 		
 		return ResponseEntity.ok( userService.getAllUsers());
 		
 	}
-	@RequestMapping("/users/{id}")
+	@RequestMapping(method=RequestMethod.GET,value="/users/{id}")
 	public ResponseEntity<String> getUser(@PathVariable String id) {
 		userService.getUserById(id);
 		return ResponseEntity.ok("User Getting Successfully");
