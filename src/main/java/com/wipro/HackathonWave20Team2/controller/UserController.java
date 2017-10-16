@@ -8,21 +8,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.HackathonWave20Team2.domain.UserBean;
 import com.wipro.HackathonWave20Team2.service.UserService;
-
+@RestController
 public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/user")
+	@RequestMapping(method=RequestMethod.GET,value="/users")
 	public ResponseEntity<List<UserBean>> getAllUsers() {
 		
 		return ResponseEntity.ok( userService.getAllUsers());
 		
 	}
-	@RequestMapping("/user/{id}")
+	@RequestMapping(method=RequestMethod.GET,value="/users/{id}")
 	public ResponseEntity<String> getUser(@PathVariable String id) {
 		userService.getUserById(id);
 		return ResponseEntity.ok("User Getting Successfully");

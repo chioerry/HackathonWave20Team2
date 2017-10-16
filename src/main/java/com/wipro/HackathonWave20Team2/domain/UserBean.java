@@ -10,7 +10,7 @@ public class UserBean {
 	@Id
 	private String id;
 	private String userName;
-	private int userAge;
+	private int age;
 	private String address;
 	private String emailId;
 	
@@ -21,11 +21,11 @@ public class UserBean {
 	}
 
 	// Parameterised Constructor if you want to set values using a constructor
-	public UserBean(String id, String userName, int userAge, String address, String emailId) {
+	public UserBean(String id, String userName, int age, String address, String emailId) {
 		super();
 		this.id = id;
 		this.userName = userName;
-		this.userAge = userAge;
+		this.age = age;
 		this.address = address;
 		this.emailId = emailId;
 	}
@@ -44,11 +44,11 @@ public class UserBean {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public int getUserAge() {
-		return userAge;
+	public int getAge() {
+		return age;
 	}
-	public void setUserAge(int userAge) {
-		this.userAge = userAge;
+	public void setAge(int age) {
+		this.age = age;
 	}
 	public String getAddress() {
 		return address;
