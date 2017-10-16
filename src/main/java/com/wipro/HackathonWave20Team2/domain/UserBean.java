@@ -2,15 +2,13 @@ package com.wipro.HackathonWave20Team2.domain;
 
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 // This hibernate annotation creates table in the hackathon DataBase
 public class UserBean {
 	@Id
-	@GeneratedValue
-	private int id;
+	private String id;
 	private String userName;
 	private int userAge;
 	private String address;
@@ -23,7 +21,7 @@ public class UserBean {
 	}
 
 	// Parameterised Constructor if you want to set values using a constructor
-	public UserBean(int id, String userName, int userAge, String address, String emailId) {
+	public UserBean(String id, String userName, int userAge, String address, String emailId) {
 		super();
 		this.id = id;
 		this.userName = userName;
@@ -34,10 +32,10 @@ public class UserBean {
 	
 	// Setter and Getter methods if you want to set values individually
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getUserName() {
